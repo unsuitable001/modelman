@@ -15,7 +15,7 @@ exports.findAllProjects = (req, res) => {
     .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving tutorials.",
+          err.message || "Some error occurred while retrieving projects.",
       });
     });
 };

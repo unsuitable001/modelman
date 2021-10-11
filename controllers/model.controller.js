@@ -29,12 +29,17 @@ exports.update = (req, res) => {
           if (!saveerr) {
             res.status(200).send(saveresult.models.id(id));
           } else {
-            res.status(400).send(saveerr.message);
+            res.status(500).send({
+              message: err.message || "Some error occurred while saving model.",
+            });
           }
         });
       }
     } else {
-      res.status(400).send(err.message);
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving project/model.",
+      });
     }
   });
 };
@@ -60,12 +65,17 @@ exports.create = (req, res) => {
           if (!saveerr) {
             res.status(200).send(saveresult);
           } else {
-            res.status(400).send(saveerr.message);
+            res.status(500).send({
+              message:
+                saveerr.message || "Some error occurred while saving project.",
+            });
           }
         });
       }
     } else {
-      res.status(400).send(err.message);
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving project.",
+      });
     }
   });
 };
@@ -90,12 +100,18 @@ exports.remove = (req, res) => {
           if (!saveerr) {
             res.status(200).send(saveresult);
           } else {
-            res.status(400).send(saveerr.message);
+            res.status(500).send({
+              message:
+                saveerr.message || "Some error occurred while saving project.",
+            });
           }
         });
       }
     } else {
-      res.status(400).send(err.message);
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving project/model.",
+      });
     }
   });
 };
