@@ -4,9 +4,25 @@ A Simple Model Manager
 
 ## Usage
 
+0. Pre-requisites
+
+- Make sure that Node and MongoDB is installed.
+- MongoDB should be running at `localhost:27017`. Otherwise, change `./config/db.config.js` file.
+- MongoDB should have a DB named `betterdata`. Otherwise, create one or change `./config/db.config.js` file.
+
+1. Install the project and it's dependencies
+
+```bash
+npm install
+```
+
+2. Run the API server
+
 ```bash
 DEBUG=modelman:* npm start
 ```
+
+API server will be available at: http://localhost:3000
 
 ## API Documentation
 
