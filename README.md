@@ -313,29 +313,12 @@ Response:
 
 ```json
 {
-  "title": "My New Project Name",
-  "real_data": ["real.csv"],
-  "created_by": "unsuitable001",
-  "models": [
-    {
-      "parameters": {
-        "batch_size": 64,
-        "training_cycles": 64
-      },
-      "title": "model-2",
-      "synthetic_data": ["synthetic.csv"],
-      "_id": "6164209264b065a2b4ad3b00"
-    },
-    {
-      "parameters": {
-        "batch_size": 128,
-        "training_cycles": 128
-      },
-      "title": "model-3",
-      "synthetic_data": ["synthetic.csv"],
-      "_id": "616422e564b065a2b4ad3b10"
-    }
-  ],
-  "id": "6164209264b065a2b4ad3afe"
+  "parameters": {
+    "batch_size": 64,
+    "training_cycles": 64
+  },
+  "title": "model-2",
+  "synthetic_data": ["synthetic.csv"],
+  "id": "6164209264b065a2b4ad3b00"
 }
 ```

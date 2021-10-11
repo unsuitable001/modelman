@@ -84,6 +84,7 @@ exports.create = (req, res) => {
 exports.remove = (req, res) => {
   const project_id = req.params.project_id;
   const id = req.params.id;
+  let result;
 
   project.findById(project_id, function (err, result) {
     if (!err) {
@@ -92,13 +93,19 @@ exports.remove = (req, res) => {
       } else {
         result.models.id(id).remove(function (removeerr, removresult) {
           if (removeerr) {
-            res.status(400).send(removeerr.message);
+            res.status(500).send({
+              message:
+                removeerr.message ||
+                "Some error occurred while removing the model.",
+            });
+          } else {
+            result = removresult;
           }
         });
         result.markModified("models");
         result.save(function (saveerr, saveresult) {
           if (!saveerr) {
-            res.status(200).send(saveresult);
+            res.status(200).send(result);
           } else {
             res.status(500).send({
               message:
