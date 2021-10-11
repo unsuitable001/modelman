@@ -164,7 +164,30 @@ Response:
 
 ```json
 {
-  "message": "Project was updated successfully."
+  "title": "My New Project Name",
+  "real_data": ["real.csv"],
+  "created_by": "unsuitable001",
+  "models": [
+    {
+      "title": "model-1",
+      "parameters": {
+        "batch_size": 32,
+        "training_cycles": 32
+      },
+      "synthetic_data": ["synthetic.csv"],
+      "_id": "6164209264b065a2b4ad3aff"
+    },
+    {
+      "title": "model-2",
+      "parameters": {
+        "batch_size": 64,
+        "training_cycles": 64
+      },
+      "synthetic_data": ["synthetic.csv"],
+      "_id": "6164209264b065a2b4ad3b00"
+    }
+  ],
+  "id": "6164209264b065a2b4ad3afe"
 }
 ```
 

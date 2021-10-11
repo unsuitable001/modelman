@@ -51,13 +51,13 @@ exports.update = (req, res) => {
     .then((data) => {
       if (!data) {
         res.status(404).send({
-          message: `Cannot update Project with id=${id}. Maybe Project was not found!`,
+          message: `Cannot update Project with id ${id}. Maybe Project was not found!`,
         });
-      } else res.send({ message: "Project was updated successfully." });
+      } else res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
-        message: "Error updating Project with id=" + id,
+        message: "Error updating Project with id " + id,
       });
     });
 };
