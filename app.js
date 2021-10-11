@@ -9,6 +9,7 @@ const db = require("./models");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var projectRouter = require("./routes/projects");
+var modelRouter = require("./routes/models");
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/projects", projectRouter);
+app.use("/models", modelRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

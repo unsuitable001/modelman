@@ -1,11 +1,11 @@
-models = require("./model.model.js");
-
 module.exports = (mongoose) => {
   const schema = mongoose.Schema({
     title: String,
-    real_data: [String],
-    created_by: String,
-    models: [new mongoose.model("model").schema],
+    parameters: {
+      batch_size: Number,
+      training_cycles: Number,
+    },
+    synthetic_data: [String],
   });
 
   schema.method("toJSON", function () {
@@ -14,6 +14,6 @@ module.exports = (mongoose) => {
     return object;
   });
 
-  const Project = mongoose.model("project", schema);
-  return Project;
+  const Model = mongoose.model("model", schema);
+  return Model;
 };
