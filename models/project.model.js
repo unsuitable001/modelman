@@ -1,12 +1,18 @@
 module.exports = (mongoose) => {
   const schema = mongoose.Schema({
     title: String,
+    real_data: [String],
     created_by: String,
-    parameters: {
-      batch_size: Number,
-      training_cycles: Number,
-    },
-    synthetic_data: [String],
+    models: [
+      {
+        title: String,
+        parameters: {
+          batch_size: Number,
+          training_cycles: Number,
+        },
+        synthetic_data: [String],
+      },
+    ],
   });
 
   schema.method("toJSON", function () {
