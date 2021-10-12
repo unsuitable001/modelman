@@ -2,6 +2,10 @@
 
 A Simple Model Manager
 
+## Walkthrough Video
+
+https://youtu.be/fFB_yKOUsSU
+
 ## Usage
 
 0. Pre-requisites
@@ -394,4 +398,3 @@ Response:
 <img width="1440" alt="Screenshot 2021-10-12 at 10 12 46 AM" src="https://user-images.githubusercontent.com/26590510/136892753-91d5d635-bb12-4506-9408-8355ae71c851.png">
 
 <img width="1440" alt="Screenshot 2021-10-12 at 10 12 39 AM" src="https://user-images.githubusercontent.com/26590510/136892777-3ab4b40a-1dfb-4153-9cab-b601ae9889d6.png">
-
