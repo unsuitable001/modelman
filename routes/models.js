@@ -15,4 +15,7 @@ router.patch("/:project_id/:id/remove", model.remove);
 /* PATCH creates synthetic data */
 router.patch("/:project_id/:id/generate", dataset.generate);
 
+/* PATCH removes synthetic data */
+router.patch("/:project_id/:id/delete/:name", dataset.removeSynthetic);
+
 module.exports = router;

@@ -60,3 +60,29 @@ exports.generate = (req, res) => {
     });
   }
 };
+
+exports.removeSynthetic = (req, res) => {
+  try {
+    // TODO: Implement actual data removal logic here.
+    const project_id = req.params.project_id;
+    const model_id = req.params.id;
+    const datasetName = req.params.name;
+    Project.updateOne(
+      { _id: project_id, "models._id": model_id },
+      { $pull: { "models.$.synthetic_data": datasetName } },
+      function (error, success) {
+        if (error) {
+          res.status(500).send({
+            message: `Failed to update model: ${req.params.model_id}. ${err}`,
+          });
+        } else {
+          res.status(200).send({ message: "file deleted", file: datasetName });
+        }
+      }
+    );
+  } catch (err) {
+    res.status(500).send({
+      message: `Could not fulfill the request. ${err}`,
+    });
+  }
+};
