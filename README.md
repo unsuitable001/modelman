@@ -322,3 +322,26 @@ Response:
   "id": "6164209264b065a2b4ad3b00"
 }
 ```
+
+### Upload Real Data
+
+Request:
+
+```
+POST http://localhost:3000/projects/PROJECT_ID/upload
+```
+
+Body:
+
+```
+multipart/form-data file: <data.csv>
+```
+
+Response:
+
+```json
+{
+  "message": "file uploaded",
+  "file": "drug.csv"
+}
+```

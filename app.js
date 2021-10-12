@@ -17,6 +17,8 @@ var corsOptions = {
   origin: "http://localhost:3000",
 };
 
+global.__basedir = __dirname;
+
 app.use(cors(corsOptions));
 
 app.use(logger("dev"));
