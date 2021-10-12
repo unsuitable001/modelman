@@ -47,7 +47,7 @@ exports.update = (req, res) => {
 
   const id = req.params.id;
 
-  Project.findByIdAndUpdate(id, req.body)
+  Project.findByIdAndUpdate(id, req.body, { new: true })
     .then((data) => {
       if (!data) {
         res.status(404).send({

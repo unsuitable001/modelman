@@ -1,5 +1,4 @@
 const db = require("../models");
-const model = db.models;
 const project = db.projects;
 
 // Updates a model.
