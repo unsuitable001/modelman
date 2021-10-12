@@ -24,6 +24,15 @@ DEBUG=modelman:* npm start
 
 API server will be available at: http://localhost:3000
 
+3. (Optional & WIP) Run frontend
+
+```bash
+cd frontend
+npm run start
+```
+
+Frontend server will be available at: http://localhost:8000
+
 ## API Documentation
 
 ### Create User
@@ -359,6 +368,23 @@ Response:
 ```json
 {
   "message": "file generated",
+  "file": "1634012228330syn"
+}
+```
+
+### Remove Synthetic Data
+
+Request:
+
+```
+PATCH http://localhost:3000/models/PROJECT_ID/MODEL_ID/FILE_NAME/delete
+```
+
+Response:
+
+```json
+{
+  "message": "file deleted",
   "file": "1634012228330syn"
 }
 ```
