@@ -345,3 +345,20 @@ Response:
   "file": "drug.csv"
 }
 ```
+
+### Create Synthetic Data
+
+Request:
+
+```
+PATCH http://localhost:3000/models/PROJECT_ID/MODEL_ID/generate
+```
+
+Response:
+
+```json
+{
+  "message": "file generated",
+  "file": "1634012228330syn"
+}
+```
